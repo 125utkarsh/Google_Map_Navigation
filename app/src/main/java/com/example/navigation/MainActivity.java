@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String source = editTextSource.getText().toString();
                 String destination = editTextDestination.getText().toString();
+                //if source and destination are empty
                 if (source.equals("") && destination.equals("")){
                     Toast.makeText(getApplicationContext(), "enter both source and destination", Toast.LENGTH_SHORT).show();
                 }
                 else{
+
                     Uri uri= Uri.parse("https://www.google.com/maps/dir/" + source + "/" + destination);
                     Intent intent= new Intent(Intent.ACTION_VIEW, uri);
                     intent.setPackage("com.google.android.apps.maps");
